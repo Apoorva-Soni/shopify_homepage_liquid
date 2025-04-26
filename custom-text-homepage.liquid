@@ -1,0 +1,106 @@
+{% schema %}
+{
+  "name": "Dynamic Text Homepage",
+  "settings": [
+    {
+      "type": "text",
+      "id": "main_heading",
+      "label": "Main Heading",
+      "default": "Welcome to Our Awesome Store!"
+    },
+    {
+      "type": "textarea",
+      "id": "sub_text",
+      "label": "Sub Heading Text",
+      "default": "Find the best products curated just for you."
+    },
+    {
+      "type": "text",
+      "id": "feature_one",
+      "label": "Feature One Title",
+      "default": "Fast Shipping"
+    },
+    {
+      "type": "text",
+      "id": "feature_two",
+      "label": "Feature Two Title",
+      "default": "Premium Quality"
+    },
+    {
+      "type": "text",
+      "id": "feature_three",
+      "label": "Feature Three Title",
+      "default": "24/7 Support"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Dynamic Text Homepage"
+    }
+  ]
+}
+{% endschema %}
+
+<style>
+  .dynamic-homepage {
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .dynamic-homepage h1 {
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .dynamic-homepage p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 50px;
+  }
+
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+
+  .feature {
+    background: #f5f5f5;
+    padding: 30px;
+    border-radius: 10px;
+    flex: 1 1 250px;
+    transition: transform 0.3s;
+  }
+
+  .feature:hover {
+    transform: scale(1.05);
+  }
+
+  .feature h2 {
+    font-size: 24px;
+    color: #4CAF50;
+    margin: 0;
+  }
+</style>
+
+<div class="dynamic-homepage">
+  <h1>{{ section.settings.main_heading }}</h1>
+  <p>{{ section.settings.sub_text }}</p>
+
+  <div class="features">
+    <div class="feature">
+      <h2>{{ section.settings.feature_one }}</h2>
+    </div>
+    <div class="feature">
+      <h2>{{ section.settings.feature_two }}</h2>
+    </div>
+    <div class="feature">
+      <h2>{{ section.settings.feature_three }}</h2>
+    </div>
+  </div>
+</div>
